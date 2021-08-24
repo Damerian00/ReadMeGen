@@ -20,7 +20,7 @@ const questions = [
       type: 'list',
       name: 'liscensing',
       message: "What's your preferred method of communication",
-      choices: ['community', 'MIT License', ' GNU GPLv3'],
+      choices: ['Existing projects and communities', 'MIT License', 'GNU General Public License version 3'],
     },
     
     
@@ -40,18 +40,23 @@ const questions = [
   
 //TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
-    // const readMeString =
-    // `  
-    // # ${answers.projectTitle}
-    // ## ${answers.describe}
-    // ## ${answers.liscensing}    
+    const readMeString =
+    `  
+    # Project Name:
+        ${answers.projectTitle}
+
+    ## About the Project:
+         ${answers.describe}
+
+    ## Liscensing for thie project:
+        ${answers.liscensing}    
         
-    //     `;
-    console.log(fileName);
-    console.log(answers.projectTitle);
-    console.log(answers.describe);
-    console.log(answers.liscensing);
-    //     fs.writeFile(fileName, readMeString);
+        `;
+
+        fs.writeFile(fileName, readMeString, (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
 }
 
 
