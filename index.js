@@ -17,8 +17,14 @@ const questions = [
    
     },
     {
+        type: 'input',
+        name: 'install',
+        message: "Please provide a any installation instructions for this project.",
+     
+      },
+    {
       type: 'list',
-      name: 'liscensing',
+      name: 'licensing',
       message: "What's your preferred method of communication",
       choices: ['Existing projects and communities', 'MIT License', 'GNU General Public License version 3'],
     },
@@ -42,14 +48,24 @@ const questions = [
 function writeToFile(fileName, answers) {
     const readMeString =
     `  
-    # Project Name:
-        ${answers.projectTitle}
+# Project Name: ${answers.projectTitle}
 
-    ## About the Project:
+## Table Of Contents:
+
+-[Project Description](#about-the-project)
+-[Installation](#installation)
+-[Licensing](##licensing)
+
+
+## About the Project:
          ${answers.describe}
 
-    ## Liscensing for thie project:
-        ${answers.liscensing}    
+## Installation:
+    ${answers.install}
+
+
+### Licensing for this project:
+        ${answers.licensing}    
         
         `;
 
