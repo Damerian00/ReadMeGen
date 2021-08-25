@@ -12,6 +12,12 @@ const questions = [
     },
     {
       type: 'input',
+      name: 'pName',
+      message: "What is the name that you would like displayed for the author of the project.",
+   
+    },
+    {
+      type: 'input',
       name: 'describe',
       message: "Please provide a short description of your project.",
    
@@ -19,9 +25,22 @@ const questions = [
     {
         type: 'input',
         name: 'install',
-        message: "Please provide a any installation instructions for this project.",
+        message: "Please provide any installation instructions for this project.",
      
       },
+      {
+        type: 'input',
+        name: 'sShot',
+        message: "Please provide the file path with name and extension to add the screen shot to the readme.",
+     
+      },
+      {
+        type: 'input',
+        name: 'gHub',
+        message: "What is your gitHub user name?",
+     
+      },
+
     {
       type: 'list',
       name: 'licensing',
@@ -50,20 +69,40 @@ function writeToFile(fileName, answers) {
     `  
 # Project Name: ${answers.projectTitle}
 
+<br />
+
+<!-- TABLE OF CONTENTS -->
 ## Table Of Contents:
 
--[Project Description](#about-the-project)
--[Installation](#installation)
--[Licensing](##licensing)
+1. -[Project Description](#about-the-project)
+2. -[Installation](#installation)
+3. -[Project Preview](#project-preview)
+4. -[Contact](#contact)
+5. -[Licensing](#licensing-for-this-project)
 
+<br />
 
+<!-- ABOUT THE PROJECT -->
 ## About the Project:
          ${answers.describe}
+
+<br />
 
 ## Installation:
     ${answers.install}
 
+<br />
 
+## Project Preview
+![Project Preview](${answers.sShot})
+
+<br />
+
+## Contact
+  ${answers.pName} - (https://github.com/${answers.gHub}) - GitHub Name
+
+<br />
+ 
 ### Licensing for this project:
         ${answers.licensing}    
         
