@@ -1,4 +1,8 @@
-  
+ 
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+
+<br />
+
 # Project Name: Readme Generator
 
 <br />
@@ -16,13 +20,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About the Project:
-         This provides a user with a quick easy way to create a README.md file for their project. It will take in some parameters you input into the terminal based on prompts like:  
-         1. title for the project 
-         2. description of the project 
-         3. installation requirements 
-         4. Screenshot of the Project 
-         5. Contact Info  
-         6. Licensing for the Project
+         This provides a user with a quick easy way to create a README.md file for their project. It will take in some parameters you input into the terminal based on prompts like:  1. title for the project 2. description of the project 3. installation requirements 4. Screenshot of the Project 5. Contact Info  6. Licensing for the Project.
 
 <br />
 
@@ -38,10 +36,11 @@
 
 ## Contact
   Patrick - (https://github.com/Damerian00) - GitHub Name
+  or you can reach out to me here: <a href="mailto:gfunk@yomail.com">Email me here!</a>
 
 <br />
  
 ### Licensing for this project:
-        GNU General Public License version 3    
+        WTFPL    
         
         

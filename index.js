@@ -40,12 +40,18 @@ const questions = [
         message: "What is your gitHub user name?",
      
       },
+      {
+        type: 'input',
+        name: 'cEmail',
+        message: "What is your email?",
+     
+      },
 
     {
       type: 'list',
       name: 'licensing',
       message: "What's your preferred method of communication",
-      choices: ['Existing projects and communities', 'MIT License', 'GNU General Public License version 3'],
+      choices: ['WTFPL', 'MIT License', 'GNU General Public License version 3'],
     },
     
     
@@ -65,8 +71,22 @@ const questions = [
   
 //TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
+  let lic;
+  if (answers.licensing === "MIT License") {
+    lic = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  } else if (answers.licensing === "GNU General Public License version 3") {
+    lic = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+  } else {
+    lic = "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)";
+  }
+
+
     const readMeString =
-    `  
+    ` 
+${lic}
+
+<br />
+
 # Project Name: ${answers.projectTitle}
 
 <br />
@@ -100,6 +120,7 @@ function writeToFile(fileName, answers) {
 
 ## Contact
   ${answers.pName} - (https://github.com/${answers.gHub}) - GitHub Name
+  or you can reach out to me here: <a href="mailto:${answers.cEmail}">Email me here!</a>
 
 <br />
  
